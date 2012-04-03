@@ -27,7 +27,7 @@ Now we need to package the war using:
     jruby -S rake assets:precompile
     jruby -S warble
 
-To deploy, we need to do that from a different directory. The vmc gem needs to run with C Ruby so we need to configure this deploy directory to use a Ruby 1.9 - you can do that with bot RVM (rvm ruby-1.9.2-p290) and rbenv (rbenv local 1.9.2-p290).
+To deploy, we need to do that from a different directory. The vmc gem needs to run with C Ruby so we need to configure this deploy directory to use a Ruby 1.9 - you can do that with both RVM (rvm ruby-1.9.2-p290) and rbenv (rbenv local 1.9.2-p290).
 
     mv bookshelf.war deploy/.
     cd deploy
