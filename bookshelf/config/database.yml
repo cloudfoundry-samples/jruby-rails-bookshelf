@@ -27,7 +27,10 @@ test:
 
 production:
   adapter: mysql
-  database: bookshelf_production
-  username: root
-  password:
-  host: localhost
+  <% require 'cfruntime/properties' %>
+  <% db_svc = CFRuntime::CloudApp.service_props('mysql') %>
+  database: <%= db_svc[:database] rescue 'bookshelf_production' %>
+  username: <%= db_svc[:username] rescue 'root' %>
+  password: <%= db_svc[:password] rescue '' %>
+  host: <%= db_svc[:host] rescue 'localhost' %>
+  port: <%= db_svc[:port] rescue '3306' %>
